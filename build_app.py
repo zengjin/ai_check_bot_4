@@ -64,7 +64,7 @@ from langchain_core.messages import HumanMessage
 
 def invoke_node(state):
     llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash", 
+        model="gemini-2.5-flash", 
         temperature=0,
         google_api_key=os.getenv("GOOGLE_API_KEY")
     )
@@ -103,7 +103,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 class ExcelChatBot:
     def __init__(self):
-        self.llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
+        self.llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.7)
     def ask(self, query: str, context: str = ""):
         messages = [
             SystemMessage(content="你是一个 Excel 校验助手。"),
